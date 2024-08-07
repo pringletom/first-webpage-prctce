@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Webpage training ep1</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body{
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+
+        }
+
+        .dark-mode{
+             background-color: black;
+             color: white;
+
+         }
+
+         #myHeader {
+             background-color: red;
+             color: blueviolet;
+            text-align: center;
+         }
+
+    </style>
+
+
+
+    <h1 id="myHeader">Above and Beyond!-First Header</h1>
+
+    <nav class="navbar">
+         <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="about.html">About</a></li>
+             <li><a href="interests.html">Interests</a></li>
+            <li><a href="info.html">Further Info</a></li>
+         </ul>
+    </nav>
+
+    <main>
+        <p id="demo">This is an example text inserted to show a degree of proficiency in navigating DOM, CSS, HTML and Javascript to create a functioning webpage.</p>
+    </main>
+
+    <div class="button-wrapper">
+        <button class= "my-button"; style="font-size:25px; background-color:blueviolet; color:yellow ; border-radius: 5px;">click me</button>
+    </div>
+
+    <a href="#"> This is a link</a>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        document.getElementsByClassName("my-button")[0].addEventListener("click", () => {
+             let canvas = document.createElement("canvas");
+                 canvas.width = 600;
+                canvas.height = 600;
+             let container = document.getElementsByClassName("button-wrapper")[0];
+                 container.appendChild(canvas);
+
+             let confetti_button = confetti.create(canvas);
+                confetti_button().then(() => container.removeChild(canvas));
+        });
+    </script>
+   
+    <button class="custom-button"; onclick="change_text()"; style="font-size: 25px; background-color:orange; color:green; border-radius: 5px;">nah but click me</button>
+    <script type="text/javascript">
+   
+        function change_text(){
+            document.getElementById("demo").innerHTML="Why did you do that?";
+         }
+    </script>
+
+    <button onclick="toggleTheme()">Toggle Light</button>
+
+    <script>
+         function toggleTheme(){
+
+            const element = document.body;
+             element.classList.toggle('dark-mode');
+
+      }
+    </script>
+            
+
+</body>
+
+
+</html>
